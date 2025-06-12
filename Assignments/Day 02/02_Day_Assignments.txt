@@ -1,0 +1,7 @@
+1. Write a Console Application using .NET Core template to demonstrate usage of Console.Read(), Console.ReadKey() and Console.ReadLine() methods.
+
+2. Difference between double and decimal datatypes.
+
+3. Write a console application using .NET core template to demonstrate implementation of a concept : Shadowing . i.e new keyword over a method
+
+4. Try do-while and while loops and find out difference between .ToString() method and Convert.ToString() method.
