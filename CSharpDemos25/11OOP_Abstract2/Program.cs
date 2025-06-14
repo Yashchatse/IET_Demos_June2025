@@ -9,11 +9,11 @@
             //pdf.Save();
             //pdf.Validate();
 
-            Console.WriteLine("Enter your report choice: 1. PDF, 2. DocX");
+            Console.WriteLine("Enter your report choice: 1. PDF, 2. DocX 3. JSON, 4. XML");
             int reportChoice = Convert.ToInt32(Console.ReadLine());
             ReportFactory factory = new ReportFactory();
             Report report = factory.GetSomeReport(reportChoice);
-            report.GetReport();
+            report.GenerateReport();
         }
     }
     public abstract class Report
@@ -22,7 +22,7 @@
         protected abstract void Validate();
         protected abstract void Save();
 
-        public void GetReport()
+        public virtual void GenerateReport()
         {
             Parse();
             Validate();
@@ -30,18 +30,36 @@
             Console.WriteLine("Report Generated Successfully!");
         }
     }
+    public abstract class SpecialReport : Report
+    {
+        protected abstract void ReValidate();
+        public override void GenerateReport()
+        {
+            Parse();
+            Validate();
+            ReValidate();
+            Save();
+            Console.WriteLine("Special Report Generated Successfully!");
+        }
+    }
     public class ReportFactory
     {
         public Report GetSomeReport(int choice)
         {
             Report report = null;
-            switch(choice)
+            switch (choice)
             {
                 case 1:
                     report = new PDF();
                     break;
                 case 2:
                     report = new DocX();
+                    break;
+                case 3:
+                    report = new JSONDoc();
+                    break;
+                case 4:
+                    report = new XML();
                     break;
                 default:
                     Console.WriteLine("Invalid choice");
@@ -90,6 +108,59 @@
             //code here...
             Console.WriteLine("DocX Saved..");
 
+        }
+    }
+
+    public class JSONDoc : SpecialReport
+    {
+        protected override void Parse()
+        {
+            //code here...
+            Console.WriteLine("JSONDoc Saved..");
+        }
+
+        protected override void Save()
+        {
+            //code here...
+            Console.WriteLine("JSONDoc Saved..");
+        }
+
+        protected override void Validate()
+        {
+            //code here...
+            Console.WriteLine("JSONDoc Valided..");
+        }
+
+        protected override void ReValidate()
+        {
+            //code here...
+            Console.WriteLine("JSONDoc Re-Validated..");
+        }
+    }
+    public class XML : SpecialReport
+    {
+        protected override void Parse()
+        {
+            //code here...
+            Console.WriteLine("XML Saved..");
+        }
+
+        protected override void Save()
+        {
+            //code here...
+            Console.WriteLine("XML Saved..");
+        }
+
+        protected override void Validate()
+        {
+            //code here...
+            Console.WriteLine("XML Valided..");
+        }
+
+        protected override void ReValidate()
+        {
+            //code here...
+            Console.WriteLine("XML Re-Validated..");
         }
     }
 }
