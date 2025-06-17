@@ -1,7 +1,7 @@
 ﻿namespace _23ObserverPattern
 {
     public delegate void NotifyDelegate(string message);
-    internal class Program
+    internal class Program // News application // Observer
     {
         static void Main(string[] args)
         {
@@ -22,7 +22,7 @@
             publisher.TriggerEvent();
         }
     }
-    public class Subscriber // Observers
+    public class Subscriber // Subscriber
     {
         public void MethodA(string message)
         {
@@ -33,7 +33,7 @@
             Console.WriteLine($"MethodB received : {message}");
         }
     }
-    public class Publisher
+    public class Publisher // Weather station, Amezon app server
     {
         public event NotifyDelegate Notify;
 
