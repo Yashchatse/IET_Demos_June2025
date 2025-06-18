@@ -1,0 +1,22 @@
+[
+  {
+    "Address": "New York",
+    "Name": "Alice",
+    "Id": 1
+  },
+  {
+    "Address": "Pune",
+    "Name": "Bob",
+    "Id": 2
+  },
+  {
+    "Author": "John Doe",
+    "Title": "C# Fundamentals",
+    "ISBN": "123-456"
+  },
+  {
+    "Author": "Jane Doe",
+    "Title": "Advanced .NET",
+    "ISBN": "789-012"
+  }
+]

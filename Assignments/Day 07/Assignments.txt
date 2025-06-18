@@ -1,0 +1,3 @@
+01 Assignment : Using xml and json serializer : persist multiple objects of same class and collection of multiple objects of different classes.[emp, cust, book] in same file.
+
+02 Assignment : Implement Logger and persist log in txt file.
