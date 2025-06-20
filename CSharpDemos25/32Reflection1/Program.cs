@@ -64,7 +64,7 @@ namespace _32Reflection1
                         ParameterInfo para = allParameters[k];
                         Console.WriteLine($"Enter value for {para.Name} of type = {para.ParameterType.ToString()}");
 
-                       object inputVal = Convert.ChangeType(Console.ReadLine(), para.ParameterType);
+                       object? inputVal = Convert.ChangeType(Console.ReadLine(), para.ParameterType);
 
                         inputParameters[k] = inputVal;
                     }
@@ -76,6 +76,7 @@ namespace _32Reflection1
                         dynamicallyCreatedObject,
                         inputParameters
                     );
+                    
                     Console.WriteLine($"{method.Name} result = {result}");
                     Console.WriteLine("-------------------------------");
 
