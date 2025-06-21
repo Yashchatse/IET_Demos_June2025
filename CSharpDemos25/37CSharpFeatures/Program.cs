@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.ComponentModel.DataAnnotations;
 
 namespace _37CSharpFeatures
 {
@@ -217,32 +218,78 @@ namespace _37CSharpFeatures
             #endregion
 
             #region Extension Methods
-            int[] arr = { 1, 2, 3, 4, 5 };
-            var nums = arr.ConvertToList(11111);
-            foreach (var item in nums)
-            {
-                Console.WriteLine(item);
-            }
+            //int[] arr = { 1, 2, 3, 4, 5 };
+            //var nums = arr.ConvertToList(11111);
+            //foreach (var item in nums)
+            //{
+            //    Console.WriteLine(item);
+            //}
 
-            //Console.WriteLine(arr.Max());
-            //Console.WriteLine(arr.Sum());
+            ////Console.WriteLine(arr.Max());
+            ////Console.WriteLine(arr.Sum());
 
-            Console.WriteLine("Enter your email");
-            string? email = Console.ReadLine();
+            //Console.WriteLine("Enter your email");
+            //string? email = Console.ReadLine();
 
-            ////if(CheckForValidEmail(email))
-            //MyClass obj = new MyClass();
-            //if (obj.CheckForValidEmail(email))
-            if (email.CheckForValidEmail())
-                Console.WriteLine("Valid Email");
+            //////if(CheckForValidEmail(email))
+            ////MyClass obj = new MyClass();
+            ////if (obj.CheckForValidEmail(email))
+            //if (email.CheckForValidEmail())
+            //    Console.WriteLine("Valid Email");
 
-            ArrayList lst = new ArrayList() { 11, 12, 13 };
+            //ArrayList lst = new ArrayList() { 11, 12, 13 };
 
+
+            #endregion
+
+            #region Iterator
+
+            //int[] arr1 = { 1, 2, 3, 4, 5 };
+            //foreach (int item in arr1)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            //string str = "somedata";
+            //foreach (char ch in str)
+            //{
+            //    Console.WriteLine(ch);
+            //}
+            //ArrayList arrlst = new ArrayList();
+            //foreach (var item in arrlst)
+            //{
+
+            //}
+
+            //// My Class is behaving like a in-built arrayList class, whos object behavies like a collection
+
+            //MyCollection daysCollection = new MyCollection();
+
+            //foreach (var day in daysCollection)
+            //{
+            //    Console.WriteLine(day);
+            //}
+            #endregion
+
+            #region Named and optional Parameters
+
+            //Display(101, "Hugh Jackman", "NYC");
+            //Display(101,"Hugh Grant");
+            //Display(101);
+            //Display(101,"Pune");// This is logically wrong
+
+            //Display(201, add: "Pune"); // Named Parameter
+            //Display(201, add: "Pune", nm:"Jack Black"); // Named Parameter
+            //Display(add: "Pune",id:300, nm:"Jack Black"); // Named Parameter
 
             #endregion
         }
 
-        
+        public static void Display(int id, string nm = "Jude Law", string add ="NYC")
+        {
+            Console.WriteLine($"Id = {id}, Name = {nm}, Address = {add}");
+        }
+
         public static bool Check(int x)
         {
             return x > 10;
@@ -262,6 +309,25 @@ namespace _37CSharpFeatures
                 return new Emp() { Id = 101, Name = "Hugh Jackman", Address = "NYC", isMax = true };
             }
         }
+    }
+
+    public class MyCollection : IEnumerable
+    {
+        private string[] days = new string[] { "Monday", "Tuesday", "Wedensday", "Thrusday", "Firday", "Saturday", "Sunday"};
+
+        public IEnumerator GetEnumerator()
+        {
+            for (int i = 0; i < days.Length; i++)
+            {
+                string day = days[i];
+                yield return day; // yield keyword is used to return the value from the iterator method. And it maintains last index value.
+            }
+        }
+
+        //public string[] Days
+        //{
+        //    get { return days; }
+        //}
     }
     public static class MyClass
     {
@@ -286,10 +352,10 @@ namespace _37CSharpFeatures
     }
     public class Emp
     {
-        public static void Demo<T>(T del)
-        {
-            T()
-        }
+        //public static void Demo<T>(T del)
+        //{
+        //    T()
+        //}
         //private int _Hugh; // private member
 
         //public int EId // public property
