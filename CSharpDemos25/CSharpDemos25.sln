@@ -95,6 +95,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "43Conncted", "43Conncted\43
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "44Disconnected", "44Disconnected\44Disconnected.csproj", "{D4BB2345-E0BC-409C-85FC-EB920574D894}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "43StoredProcedures", "43StoredProcedures\43StoredProcedures.csproj", "{042D7059-6DB7-4EB5-892B-398AA8A65F75}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "45EntityFramework", "45EntityFramework\45EntityFramework.csproj", "{36867646-2AC7-4969-A225-F3F3D224F797}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -285,6 +289,14 @@ Global
 		{D4BB2345-E0BC-409C-85FC-EB920574D894}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4BB2345-E0BC-409C-85FC-EB920574D894}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D4BB2345-E0BC-409C-85FC-EB920574D894}.Release|Any CPU.Build.0 = Release|Any CPU
+		{042D7059-6DB7-4EB5-892B-398AA8A65F75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{042D7059-6DB7-4EB5-892B-398AA8A65F75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{042D7059-6DB7-4EB5-892B-398AA8A65F75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{042D7059-6DB7-4EB5-892B-398AA8A65F75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36867646-2AC7-4969-A225-F3F3D224F797}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36867646-2AC7-4969-A225-F3F3D224F797}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36867646-2AC7-4969-A225-F3F3D224F797}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36867646-2AC7-4969-A225-F3F3D224F797}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
