@@ -1,4 +1,5 @@
 ﻿using _45EntityFramework.Models;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
@@ -13,7 +14,7 @@ namespace _45EntityFramework.DAL
             // A service to read appsettings.json file
             var builder = new  ConfigurationBuilder();
 
-            string dirPath = Directory.GetCurrentDirectory();//// Path =" /bin/debug/net8.0" 
+            //string dirPath = Directory.GetCurrentDirectory();//// Path =" /bin/debug/net8.0" 
             builder.SetBasePath(Directory.GetCurrentDirectory());
 
             // Add the JSON file to the configuration and copy appsettings.json file to the output directory
@@ -24,6 +25,14 @@ namespace _45EntityFramework.DAL
 
             //Database Provider -  service register
             optionsBuilder.UseSqlServer(configuration.GetConnectionString("conStr"));
+        }
+
+        public Customer GetCustomerById(int id)
+        {
+            var idSQLParameter =new SqlParameter("@Id", id);
+            // Execute the stored procedure
+            var customer = custs.FromSqlRaw("EXEC GetCustomerById @Id", idSQLParameter).ToList().FirstOrDefault();
+            return customer;
         }
     }
 }
