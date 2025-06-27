@@ -1,0 +1,60 @@
+﻿@model _07Demo_BootStap_LayoutPages_ViewModel.Models.EmpViewModel
+@{
+    ViewData["Title"] = "Index";
+    // Layout = "~/Views/Shared/_Layout.cshtml"; // Specify the layout page to use
+}
+
+<h1>Records</h1>
+<div class="container table-responsive">
+    <table class="table table-bordered table-info">
+        <thead>
+            <tr>
+                <th>
+                    EId
+                </th>
+                <th>
+                    EName
+                </th>
+                <th>
+                    DeptName
+                </th>
+                <th>
+                    EDescription
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                @foreach (var item in Model.allEmployees)
+                {
+                    <tr>
+                        <td>@item.EId</td>
+                        <td>@item.EName</td>
+                        <td>@item.Dept.deptName</td>
+                        <td>@item.EDescription</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+    <table class="table table-bordered table-dark">
+        <thead>
+            <tr>
+                <th>Dept Id</th>
+                <th>Dept Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                @foreach (var item in Model.allDepartments)
+                {
+                    <tr>
+                        <td> @item.deptId</td>
+                        <td> @item.deptName</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
+

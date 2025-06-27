@@ -1,0 +1,28 @@
+﻿@model System.Collections.ArrayList;
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Records</h1>
+    @{
+        @foreach (var item in Model)
+        {
+            @if(item is Emp)
+            {
+                Emp emp = item as Emp;
+                <p style="color:dodgerblue">@emp.Id</p>
+                <p style="color:dodgerblue">@emp.Name</p>
+                <p style="color:dodgerblue">@emp.Address</p>
+            }
+            @if(item is Cust)
+            {
+                Cust cust = item as Cust;
+                <p style="color:green">@cust.CId</p>
+                <p style="color:green">@cust.CName</p>
+                <p style="color:green">@cust.CBNo</p>
+            }
+        }
+    }
+</div>
