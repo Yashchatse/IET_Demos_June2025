@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <header style="background-color:dodgerblue; color:white">
+        <nav>
+            <a href="/Home/Index">Home</a> |
+            <a href="/Home/About">About</a> |
+            <a href="/Home/Contact">Contact</a>
+        </nav>
+    </header>
+   <main>
+        <div class="container text-bg-secondary">
+            @RenderBody()
+        </div>
+   </main>
+    <footer style="background-color:gold; color:blue">
+        (C) Bonaventure Systems,Pune
+    </footer>
+    <script src="~/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
