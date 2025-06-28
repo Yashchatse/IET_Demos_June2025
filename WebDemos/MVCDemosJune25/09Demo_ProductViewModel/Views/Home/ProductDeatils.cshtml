@@ -1,0 +1,24 @@
+﻿@model _09Demo_ProductViewModel.Models.Product
+@{
+    ViewData["Title"] = "ProductDeatils";
+}
+
+<h1 class="text-warning">Product Deatils :</h1>
+
+<div class="card" style="width: 18rem;">
+    <img src="~/Images/laptopAsus.jpg" class="card-img-top" alt="Asus Laptop">
+    <div class="card-body">
+        <h5 class="card-title">@Model.Name</h5>
+        <p class="card-text">
+            <ol>
+                <li>Processor: Intel Core i5-1335U Processor 1.3 GHz (12MB Cache, up to 4.6 GHz, 10 cores, 12 Threads)</li>
+                <li>Memory: 8GB (4GB on board + 8GB SO-DIMM) 3200MHz with | Storage: 512GB M.2 NVMe PCIe 4.0 SSD</li>
+                <li>
+                    Display: 15.6-inch (39.62 cm) FHD (1920 x 1080) 16:9 aspect ratio, 60Hz refresh rate Display, 45% NTSC color gamut Anti-glare display
+                </li>
+            </ol>
+        </p>
+        <a href="#" class="btn btn-primary">Add To Cart</a>
+    </div>
+</div>
+
