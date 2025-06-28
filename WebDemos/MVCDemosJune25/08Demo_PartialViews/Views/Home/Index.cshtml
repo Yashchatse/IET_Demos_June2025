@@ -1,0 +1,24 @@
+﻿@model List<_08Demo_PartialViews.Models.Emp>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Emp Records</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Dept</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var emp in Model)
+            {
+                //Asp.Net Tag Helper to render a partial view
+                <partial name="_EmpPartialView" model="emp" />
+            }
+        </tbody>
+    </table>
+</div>

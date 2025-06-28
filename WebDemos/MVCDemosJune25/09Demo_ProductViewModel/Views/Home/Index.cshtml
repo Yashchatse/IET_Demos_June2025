@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h1 class="text-danger">Online Shopping Page: </h1>
+
+<div class="card" style="width: 18rem;">
+    <img src="~/images/img32.jpg" class="card-img-top" alt="Laptop">
+    <div class="card-body">
+        <h5 class="card-title">@Model.Product.Name</h5>
+        <p class="card-text">@Model.Message</p>
+        @if (Model.isInStock)
+        {
+            <p class="card-text">in Stock</p>
+        }
+        else
+        {
+            <p class="card-text">not in Stock</p>
+        }
+
+        <a href="/Home/ProductDeatils/@Model.Product.Id" class="btn btn-primary">Product Details</a>
+    </div>
+</div>

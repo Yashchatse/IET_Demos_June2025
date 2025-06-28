@@ -1,0 +1,13 @@
+﻿@model _13Demo_EF_CodeFirst.Models.Emp
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+<form asp-action="Create" method="post">
+    <input asp-for="@Model.Id" hidden/><br/>
+    <input asp-for="@Model.Name"/><br/>
+    <input asp-for="@Model.Address"/><br/>
+    <input type="submit" value="Add New Emp Record"/>
+</form>
+
